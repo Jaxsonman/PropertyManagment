@@ -22,8 +22,8 @@ function main() {
       <BrowserRouter>
         <Switch>
           <HeaderWrapper>
-            <Route path='/' component={Signin}/>
-            <Route path='/' component={Signup}/>
+            <Route path='/' exact component={Signin}/>
+            <Route path='/signup' component={Signup}/>
           </HeaderWrapper>
         </Switch>
       </BrowserRouter>
