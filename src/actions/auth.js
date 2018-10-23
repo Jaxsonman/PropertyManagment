@@ -4,13 +4,15 @@ import { ROOT_URL } from '../config';
 
 export function signUp(fields, success) {
     console.log(fields);
+    success()
     return function(dispatch) {
-        // axios.post(`${ROOT_URL}/signUp`, fields)
-        //     .then(Response => {
-
-        //     })
-        //     .catch(err => {
-        //         if(err) { console.log(err)}
-        //     })
+        axios.post(`${ROOT_URL}/signUp`, fields)
+            .then(Response => {
+                console.log(response);
+                success()
+            })
+            .catch(err => {
+                if(err) { console.log(err)}
+            })
     }
 }
