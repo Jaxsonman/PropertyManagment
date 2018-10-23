@@ -1,15 +1,44 @@
 import React, {Component} from 'react';
 import { reduxForm, Field} from 'redux-form';
 import FormTitle from '../formTitle';
-import {FormInput} from '../formFields';
+import {FormInput, FormButton} from '../formFields';
+import TextLink from '../Textlink';
 
 
 class SigninForm extends Component {
     render() {
         return (
             <form className='sign-in-form'>
-                <FormTitle className='sign-in__title' text='login' />
-                <Field className='sing-in-form__email' component={FormInput} name='email' type='email'/>
+                <FormTitle className='sign-in-form__title' text='login' />
+                <Field 
+                className='sign-in-form__email' 
+                placeholder='Enter Email' 
+                name='email' 
+                type='email'
+                title="Email"
+                component={FormInput} 
+                />
+                <Field 
+                className='sign-in-form__password' 
+                placeholder='Enter Password' 
+                name='password' 
+                type='password'
+                title="Password"
+                component={FormInput} 
+                />
+                <Field 
+                className='sign-in-form__login' 
+                placeholder='Enter Login' 
+                name='login' 
+                type='login'
+                title="login"
+                component={FormButton} 
+                />
+               <div className="sign-in-form__text-links">
+                <TextLink to='/forgot' text='Forgot Password'/>
+                <TextLink to='/signup' text='Not a member? Register here'/>
+               </div>
+
             </form>
         )
     }
