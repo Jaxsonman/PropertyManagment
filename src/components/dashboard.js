@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import TabNav from './tabnav';
 
 
@@ -19,12 +20,16 @@ class Dashboard extends Component{
                     title: 'Requests',
                     active: false,
                     component: <h4>Hey There - Requests</h4>
-                }
+                },
             ]
         }
     }
     render() {    
-        return <TabNav tabs={this.state.tabs}/>
+        return (
+            <div className='dashboard'>
+                <TabNav tabs={this.state.tabs}/>
+            </div>
+        )
     }
 
   }
