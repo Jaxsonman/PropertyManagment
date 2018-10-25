@@ -1,35 +1,42 @@
-import React, {Component} from 'react';
-import { reduxForm, Field} from 'redux-form';
-import FormTitle from '../formTitle';
-import {FormInput, FormButton} from '../formFields';
-import TextLink from '../textlink';
+import React, { Component } from "react";
+import { reduxForm, Field } from "redux-form";
 
+import FormTitle from "../formTitle";
+import { FormInput, FormButton, FormTextArea } from "../formFields";
+import TextLink from "../textlink";
 
 class NewNewsletterForm extends Component {
-    render() {
+  render() {
 
-        const { handleSubmit } = this.props;
+    const { handleSubmit } = this.props;
 
-        return (
-            <form onSubmit={handleSubmit} className='new-newsletter-form'>
-                <FormTitle className='new-newsletter-form__title' text='login' />
-                <Field 
-                className='new-newsletter-form__email' 
-                placeholder='Enter Email' 
-                name='email' 
-                type='email'
-                title="Email"
-                component={FormInput} 
-                />
-
-
-            </form>
-        )
-    }
+    return (
+      <form onSubmit={handleSubmit} className="new-newsletter-form">
+        <FormTitle className="new-newsletter-form__title" text="New Newsletter" />
+        <Field
+          className="new-newsletter-form__newsletter-title"
+          placeholder="Newsletter Title"
+          name="title"
+          type="text"
+          title="Newsletter Title"
+          component={FormInput}
+        />  
+        <Field
+          className="new-newsletter-form__body"
+          placeholder="Newsletter Body"
+          name="body"
+          type="text"
+          title="Body"
+          component={FormTextArea}
+        />     
+        
+      </form>
+    );
+  }
 }
 
 NewNewsletterForm = reduxForm({
-    form: 'newnewsletter'
+  form: "newnewsletter"
 })(NewNewsletterForm);
 
-export default NewNewsletterForm
+export default NewNewsletterForm;
