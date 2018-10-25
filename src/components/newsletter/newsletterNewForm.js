@@ -11,36 +11,17 @@ class NewNewsletterForm extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit} className='sign-in-form'>
-                <FormTitle className='sign-in-form__title' text='login' />
+            <form onSubmit={handleSubmit} className='new-newsletter-form'>
+                <FormTitle className='new-newsletter-form__title' text='login' />
                 <Field 
-                className='sign-in-form__email' 
+                className='new-newsletter-form__email' 
                 placeholder='Enter Email' 
                 name='email' 
                 type='email'
                 title="Email"
                 component={FormInput} 
                 />
-                <Field 
-                className='sign-in-form__password' 
-                placeholder='Enter Password' 
-                name='password' 
-                type='password'
-                title="Password"
-                component={FormInput} 
-                />
-                <Field 
-                className='sign-in-form__login' 
-                placeholder='Enter Login' 
-                name='login' 
-                type='login'
-                title="login"
-                component={FormButton} 
-                />
-               <div className="sign-in-form__text-links">
-                <TextLink to='/forgot' text='Forgot Password'/>
-                <TextLink to='/signup' text='Not a member? Register here'/>
-               </div>
+
 
             </form>
         )
