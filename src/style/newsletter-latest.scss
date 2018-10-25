@@ -9,8 +9,6 @@
     border: 1px solid $color-gray-E6;
     border-radius: .5rem;
 
-
-
     & > * {
         grid-column: s/e;
     }
@@ -32,7 +30,6 @@
     &__image {
         grid-row: s/m;
         z-index: -10;
-
     }
     &__body {
         grid-row: m/e;
@@ -41,5 +38,15 @@
             line-height: 2.2rem;
             font-size: 1.6rem;
         }
+    }
+
+    &__button {
+        grid-row: s/m;
+        grid-column: s/e;
+        justify-self: end;
+        align-self: end;
+
+        margin-right: 1rem;
+        margin-bottom: 1.2rem;
     }
 }

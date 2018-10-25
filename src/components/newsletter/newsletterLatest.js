@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import Button from '../button';
 
 class NewsletterLatest extends Component {
-    render() {
-        const { title, imageURl, body} = this.props;
 
+    handleEdit = () => {
+        console.log('trying to handle edit');
+    }
+
+    render() {
+        const { title, imageURL, body } = this.props;
         return (
             <div className='newsletter-latest'>
                 <h1 className='newsletter-latest__title'>{title}</h1>
-                <img className='newsletter-latest__image' src={imageURl}/>
+                <img className='newsletter-latest__image' src={imageURL}/>
+                <Button className='newsletter-latest__button' callback={() => this.handleEdit()} icon='fas fa-pencil-alt'/>
                 <div className='newsletter-latest__body'>
                     <p>{body}</p>
                 </div>
@@ -15,6 +21,5 @@ class NewsletterLatest extends Component {
         )
     }
 }
-
 
 export default NewsletterLatest;
