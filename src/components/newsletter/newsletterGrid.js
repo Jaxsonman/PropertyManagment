@@ -1,15 +1,17 @@
-import React,  {Component } from 'react';
+import React, { Component } from 'react';
 
 import NewsletterBox from './newsletterBox';
-import NewsletterArchive from'./newsletterArchive';
-import ArchiveItem from './newsletterArchive';
+import NewsletterArchive from './newsletterArchive';
+import NewsletterLatest from './newsletterLatest';
 
 class NewsletterGrid extends Component {
     render() {
         return (
             <div className='newsletter-grid'>
+                {/* add button */}
                 <NewsletterBox date={new Date()}/>
-                <ArchiveItem />
+                <NewsletterArchive/>
+                <NewsletterLatest/>
             </div>
         )
     }

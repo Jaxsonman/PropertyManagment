@@ -1,17 +1,26 @@
 
+// BASE
 @import 'variables';
 @import 'base';
 
+// HEADER
 @import 'header';
 
+// AUTH
 @import 'signin';
 @import 'signup';
 
+// HELPERS
 @import 'form-title';
 @import 'form-fields';
 @import 'text-link';
-@import'dashboard';
+
+// DASHBOARD
+@import 'dashboard';
 @import 'tab-nav';
-@import 'newsletterGrid.scss';
-@import 'newsletter-box.scss';
+
+// NEWSLETTERS
+@import 'newsletterGrid';
+@import 'newsletter-box';
 @import 'newsletter-archive';
+@import 'newsletter-latest';
