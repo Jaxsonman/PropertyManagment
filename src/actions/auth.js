@@ -2,19 +2,17 @@ import axios from 'axios';
 
 import { ROOT_URL } from '../config';
 import {
-    AUTHENTICATED_USER
+    AUTHENTICATE_USER
 } from './types';
 
 export function signUp(fields, success) {
-    console.log(fields);
-    success()
     return function(dispatch) {
         axios.post(`${ROOT_URL}/signUp`, fields)
             .then(response => {
                 const { token } = response.data;
-                localStorage.getItem('token', token);
+                localStorage.setItem('token', token);
                 dispatch({
-                    type: AUTHENTICATED_USER,
+                    type: AUTHENTICATE_USER,
                     payload: response.data
                 })
                 success()
@@ -30,9 +28,9 @@ export function signIn(fields, success) {
         axios.post(`${ROOT_URL}/signIn`, fields)
         .then(response => {
             const { token } = response.data;
-            localStorage.getItem('token', token);
+            localStorage.setItem('token', token);
             dispatch({
-                type: AUTHENTICATED_USER,
+                type: AUTHENTICATE_USER,
                 payload: response.data
             })
             success()
