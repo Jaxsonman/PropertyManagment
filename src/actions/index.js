@@ -1,9 +1,14 @@
-import{
+import {
     signUp,
     signIn
-} from "./auth";
+} from './auth';
+
+import { 
+    fetchNewsletters
+} from './newsletter';
 
 export {
     signUp,
-    signIn
+    signIn,
+    fetchNewsletters
 };
