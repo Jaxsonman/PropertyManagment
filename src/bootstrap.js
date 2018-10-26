@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
+import EditNewsletter from './components/newsletter/newsletterEdit';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
@@ -36,6 +37,7 @@ function main() {
 
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
+            <Route path='/newsletter/edit/:id' component={requireAuth(EditNewsletter)}/>
           </Layout>
         </Switch>
       </Router>
